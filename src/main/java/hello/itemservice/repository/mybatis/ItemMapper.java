@@ -15,8 +15,9 @@ public interface ItemMapper {
 
     void save(Item item);
 
+
     //parameter가 하나인 경우에는 Param 어노테이션 생략 가능
-    void update(@Param("id") Long id, @Param("updateParam")ItemUpdateDto updateDto);
+    void update(@Param("id") Long id, @Param("updateParam")ItemUpdateDto updateParam);
 
     List<Item> findAll(ItemSearchCond itemSearch);
 
