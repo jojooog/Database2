@@ -49,9 +49,9 @@ public class JpaItemRepositoryV2 implements ItemRepository {
 
         if(StringUtils.hasText(itemName) && maxPrice != null) {
             // return repository.findByItemNameLikeAndPriceLessThanEqual(itemName, maxPrice);
-            return repository.findItems(itemName,maxPrice);
+            return repository.findItems("%" + itemName + "%",maxPrice);
         } else if(StringUtils.hasText(itemName)) {
-            return repository.findByItemNameLike(itemName);
+            return repository.findByItemNameLike("%" + itemName + "%");
         } else if(maxPrice != null) {
             return repository.findByPriceLessThanEqual(maxPrice);
         } else {
